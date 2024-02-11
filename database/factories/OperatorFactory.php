@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Operator;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,15 @@ class OperatorFactory extends Factory
     public function definition(): array
     {
         return [
+
             
+            'numero_documento' => fake()->numberBetween(1,100),
+            'tipo_documento' => fake()->randomElement(['DNI','Pasaporte','NIF']),
+            'nombre' => fake()->firstName(),
+            "apellido" => fake()->lastName(),
+            "fecha_ingreso" => fake()->dateTimeBetween('-25 years', 'now'),//genera fecha y hora aleatoria
+            
+           
         ];
     }
 }
