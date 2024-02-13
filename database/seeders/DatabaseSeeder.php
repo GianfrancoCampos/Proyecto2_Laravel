@@ -4,8 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Contact;
-use App\Models\Operator;
+
 
 use App\Models\Operator;
 use App\Models\Product;
