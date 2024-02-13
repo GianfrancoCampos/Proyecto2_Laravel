@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Contact;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(OperatorSeeder::class);
+        $this->call(ContactSeeder::class);
+        $this->call(CallSeeder::class);
+
     }
 }

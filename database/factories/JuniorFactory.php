@@ -17,7 +17,6 @@ class JuniorFactory extends Factory
     public function definition(): array
     {
         return [
-            "operator_id" => fake()->numberBetween(1, 10),
        
         ];
     }
