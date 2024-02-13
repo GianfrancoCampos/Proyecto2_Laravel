@@ -14,10 +14,9 @@ return new class extends Migration
         // Schema::dropIfExists('calls');
 
         Schema::table('calls', function (Blueprint $table) {
-            $table->bigInteger('num_doc_contacto')->unsigned()->after('id');
-            $table->foreign('num_doc_contacto')->references('id')->on('contacts')->onUpdate('cascade')->onDelete('cascade');
-
-            $table->bigInteger('operador_id')->unsigned()->after('num_doc_contacto');
+            $table->bigInteger('numero_documento_contacto_id')->unsigned()->after('id');
+            $table->foreign('numero_documento_contacto_id')->references('id')->on('contacts')->onUpdate('cascade')->onDelete('cascade');
+            $table->bigInteger('operador_id')->unsigned()->after('numero_documento_contacto_id');
             $table->foreign('operador_id')->references('id')->on('operators')->onUpdate('cascade')->onDelete('cascade');
         
         });
@@ -29,8 +28,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('calls', function (Blueprint $table) {
-            $table->dropForeign('num_doc_contacto');
-            $table->dropColumn('num_doc_contacto');
+            $table->dropForeign('numero_documento_contacto_id');
+            $table->dropColumn('numero_documento_contacto_id');
             $table->dropForeign('operador_id');
             $table->dropColumn('operador_id');
         });

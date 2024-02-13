@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('numero_telefono')->unique();
             $table->date('fecha_llamada');
-            $table->integer('hora_llamada');
+            $table->time('hora_llamada');
             $table->integer('numero_linea_interno');
             $table->timestamps();
         });
