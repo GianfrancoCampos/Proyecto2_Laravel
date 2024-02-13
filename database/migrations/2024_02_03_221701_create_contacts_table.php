@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('numero_documento')->unique();
             $table->string('tipo_documento')->unique();
 =======
@@ -24,6 +25,10 @@ return new class extends Migration
 >>>>>>> 268b1dad81f50d3558cc35a113c6e7d642df02eb
 =======
 >>>>>>> 268b1dad81f50d3558cc35a113c6e7d642df02eb
+=======
+            $table->string('numero_documento')->unique();
+            $table->string('tipo_documento');
+>>>>>>> 610515a5c5e3bebdf39e8f469c3cdd1de24be06c
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('calle');

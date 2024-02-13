@@ -12,7 +12,7 @@ class Operator extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['numero_documento','tipo_documento','nombre','apellido','fecha_ingreso'];
+    protected $fillable = ['numero_documento','id_coordinador','tipo_documento','nombre','apellido','fecha_ingreso'];
 
     // Relacion reflexiva Operador - Cordinador
     public function coordinator() :BelongsTo{

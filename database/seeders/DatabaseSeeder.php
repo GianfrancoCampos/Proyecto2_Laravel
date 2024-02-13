@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Contact;
+use App\Models\Operator;
+
 use App\Models\Operator;
 use App\Models\Product;
 use Database\Factories\OperatorFactory;
@@ -26,6 +29,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
 
         $this->call(OperatorSeeder::class);
         $this->call(ContactSeeder::class);

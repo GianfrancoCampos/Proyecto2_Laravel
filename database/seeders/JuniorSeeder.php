@@ -2,21 +2,19 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contact;
+use App\Models\Junior;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Facades\DB;
->>>>>>> 610515a5c5e3bebdf39e8f469c3cdd1de24be06c
 
-class ContactSeeder extends Seeder
+class JuniorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Contact::factory()->count(10)->create();
+        Junior::factory(5)->create();
+        
+        // Junior::factory()->create();
     }
 }
