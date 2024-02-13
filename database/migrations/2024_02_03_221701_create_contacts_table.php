@@ -20,6 +20,9 @@ return new class extends Migration
 
             $table->string('numero_documento')->unique();
             $table->string('tipo_documento');
+<<<<<<< HEAD
+>>>>>>> 268b1dad81f50d3558cc35a113c6e7d642df02eb
+=======
 >>>>>>> 268b1dad81f50d3558cc35a113c6e7d642df02eb
             $table->string('nombre');
             $table->string('apellidos');

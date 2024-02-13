@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class OperatorFactory extends Factory
 {
-    protected $operator = Operator::class;
     /**
      * Define the model's default state.
      *
@@ -18,14 +17,38 @@ class OperatorFactory extends Factory
      */
     public function definition(): array
     {
+        // $idsOperadores = Operator::pluck('id')->toArray(); // Obtener todos los IDs de los operadores
+        $id = Operator::all()->pluck('id')->toArray();
+        $idsRestantes = array_diff($id, [2, 7]); // Filtrar los IDs para excluir los valores 2 y 7
+
+        $idCoordinador = null;
+        
+        if (!empty($idsRestantes)) {
+            // Elegir aleatoriamente un ID de los restantes
+            $idCoordinador = $this->faker->randomElement($idsRestantes);
+        }
+
         return [
-            //
-            'numero_documento' =>$this->faker->numerify('#########'),
-            'tipo_documento' =>$this->faker->randomElement(['DNI', 'NIE']),
-            'nombre' =>$this->faker->name(), 
-            'apellido' =>$this->faker->lastName(),
-            'fecha_ingreso' =>$this->faker->dateTimeBetween('2019-01-01', 'now'),
-            'id_coordinador' => $this->faker->numberBetween(1, Operator::class)
+            'id_coordinador' => $idCoordinador,
+            'numero_documento' => $this->faker->numberBetween(1, 100),
+            'tipo_documento' => $this->faker->randomElement(['DNI', 'NIF']),
+            'nombre' => $this->faker->firstName(),
+            'apellido' => $this->faker->lastName(),
+            'fecha_ingreso' => $this->faker->dateTimeBetween('-25 years', 'now'),
         ];
+
+        
+        
+           
+            //hacer subconjuntos del id 
+            //pluck(id) //inrandomorder
+            //where (id>2||8>4)
+            //coger un array de los id de operador
+            //agragar columna nullable
+            //1º hacer seeder de los operadores y coordinadores a la vez
+            //(agregar un condicionador if)cuando el valor de id sigual a '7' sera === a null
+
+
+         
     }
 }
