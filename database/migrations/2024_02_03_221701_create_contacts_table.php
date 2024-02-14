@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('calle');
             $table->integer('numero_domicilio');
             $table->integer('cod_postal');
-            $table->integer('cod_postal');
             $table->timestamps();
         });
     }

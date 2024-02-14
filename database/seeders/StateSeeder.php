@@ -29,7 +29,7 @@ class StateSeeder extends Seeder
             'codigo' => 'R1004',
             'descripcion' => 'Reclamo cerrado'
         ]);
-        State::crate([
+        State::create([
             'codigo' => 'R1005',
             'descripcion' => 'Reclamo reabierto'
         ]);
