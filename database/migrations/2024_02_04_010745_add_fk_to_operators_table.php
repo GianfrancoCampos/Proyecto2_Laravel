@@ -13,9 +13,8 @@ return new class extends Migration
     {
         // Schema::dropIfExists('operators');
         Schema::table('operators', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_coordinador')->nullable()->after('id'); //unsignedBigInteger:  es para que solo puedan ser positivos y no negativos
-            $table->foreign('id_coordinador')->references('id')->on('operators')->onDelete('cascade');
-            
+            $table->unsignedBigInteger('id_coordinador')->nullable()->after('id');
+            $table->foreign('id_coordinador')->references('id')->on('operators');
         });
     }
 
