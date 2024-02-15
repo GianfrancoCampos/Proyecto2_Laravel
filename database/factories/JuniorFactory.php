@@ -20,28 +20,27 @@ class JuniorFactory extends Factory
     public function definition(): array
     {
 
-        $operadoresIds = Operator::pluck('id');
-        $cont_id_oper = $operadoresIds->count();
-        $numeroRandom = rand(1, $cont_id_oper);
-        $id_oper = Junior::pluck('operator_id');
+        // $operator_id = Operator::all()->pluck('id')->toArray();
+        $id_operador = Operator::inRandomOrder()->first()->id;
 
-        for ($i = 0; $i < count($id_oper); $i++) {
-            if ($id_oper[$i] === $operadoresIds[$numeroRandom - 1]) {
-                $numeroRandom = rand(1, $cont_id_oper);
-                $i = -1;  
+        $operadores = Operator::all();
+
+        foreach ($operadores as $operador) {
+            if ($operador->id === $id_operador || $operador->id === $id_operador) {
+                // Si el id es 2 o 7, establece id_coordinador como nulo
+                $operador->id_coordinador = null;
+            } else {
+                // Si no es 2 ni 7, asigna un coordinador aleatorio
+                $coordinadorAleatorio = $operadores->where('id', '!=', $operador->id)->random();
+                $operador->id_coordinador = $coordinadorAleatorio->id;
             }
+        
+           
         }
 
-
-
-        // $fecha_ingreso = $operadores->fecha_ingreso;
-        // $fecha_actual = date('now');
-        // $diferencia = $fecha_actual-$fecha_ingreso;
-        // 'operator_id' => fake()->numberBetween(1, $operadores->count())
-        $numero = 5;
         return [
-            'operator_id' => $numeroRandom,
-            'antiguedad' => fake()->date()
+            // 'operator_id' => fake()->randomElement($condicion),
+            'antiguedad' => fake()->randomElement(range(1,5)) . ' años' 
         ];
     }
 }

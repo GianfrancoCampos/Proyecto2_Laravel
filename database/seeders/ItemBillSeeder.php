@@ -2,21 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Junior;
-use App\Models\Operator;
+use App\Models\itemBill;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class JuniorSeeder extends Seeder
+class ItemBillSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Junior::factory(5)->create();
-        
-        
-
+        itemBill::factory()->count(10)->create();
     }
 }
