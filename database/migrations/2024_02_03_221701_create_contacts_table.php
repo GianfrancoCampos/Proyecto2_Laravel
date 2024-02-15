@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('numero_documento')->unique();
-            $table->string('tipo_documento')->unique();
+            $table->string('tipo_documento');
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('calle');

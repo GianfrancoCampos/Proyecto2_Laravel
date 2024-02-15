@@ -13,7 +13,7 @@ class JuniorSeeder extends Seeder
      */
     public function run(): void
     {
-        Junior::factory(5)->create();
+        Junior::factory(10)->create();
         
         // Junior::factory()->create();
     }

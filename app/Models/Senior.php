@@ -19,4 +19,5 @@ class Senior extends Model
         return $this->hasMany(Claim::class);
     }
 
+
 }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\State;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class StateSeeder extends Seeder
 {
@@ -13,23 +14,23 @@ class StateSeeder extends Seeder
      */
     public function run(): void
     {
-        State::create([
+        State::created([
             'codigo' => 'R1001',
             'descripcion' => 'Reclamo abierto'
         ]);
-        State::create([
+        State::created([
             'codigo' => 'R1002',
             'descripcion' => 'Proceso de resolucion'
         ]);
-        State::create([
+        State::created([
             'codigo' => 'R1003',
             'descripcion' => 'Reclamo pendiente'
         ]);
-        State::create([
+        State::created([
             'codigo' => 'R1004',
             'descripcion' => 'Reclamo cerrado'
         ]);
-        State::crate([
+        State::created([
             'codigo' => 'R1005',
             'descripcion' => 'Reclamo reabierto'
         ]);
