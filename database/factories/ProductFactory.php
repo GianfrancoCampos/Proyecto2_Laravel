@@ -17,7 +17,6 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            //
             'codigo' => 'CA' . $this->faker->unique()->randomNumber(8),
             'descripcion' => fake()->text(20)
         ];

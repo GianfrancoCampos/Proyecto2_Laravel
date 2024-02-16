@@ -4,10 +4,12 @@ namespace Database\Factories;
 
 use App\Models\Junior;
 use App\Models\Operator;
-use Exception;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Testing\Fakes\Fake;
+use PHPUnit\TextUI\XmlConfiguration\Logging\Junit;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Junior>
@@ -19,6 +21,7 @@ class JuniorFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
     public function definition(): array
     {
         /**
@@ -46,14 +49,6 @@ class JuniorFactory extends Factory
         // while (in_array($valor, $operador_id_existente)) {
         //     $valor =  rand(1, $numero_operadores);
 
-        // }
-        // $auxiliar = $valor;
-        // array_push($aleatoriosIngresados, $auxiliar);
-        // Obtener todos los IDs de los operadores existentes en juniors
-        // $fecha_ingreso = $operadores->fecha_ingreso;
-        // $fecha_actual = date('now');
-        // $diferencia = $fecha_actual-$fecha_ingreso;
-        // 'operator_id' => fake()->numberBetween(1, $operadores->count())
         $numero_operadores =  Operator::all()->pluck('id')->count();
         $valor = fake()->unique()->numberBetween(1, $numero_operadores);
         $antiguedad = Operator::selectRaw('CONCAT(
@@ -63,7 +58,7 @@ class JuniorFactory extends Factory
             " meses"
         ) AS antiguedad')
             ->where('id', $valor)
-            ->pluck('antiguedad')->first();//first(), devuelve la primera fila de la consulta, esto es porque si no el texto le da de una manera rara
+            ->pluck('antiguedad')->first(); //first(), devuelve la primera fila de la consulta, esto es porque si no el texto le da de una manera rara
         // Este metodo viene de una consulta en sql la cual esta adaptada en eloquent
         // La consulta fue la siguiente:
         /* SELECT 

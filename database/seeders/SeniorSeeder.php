@@ -13,7 +13,6 @@ class SeniorSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        Senior::factory(10)->create();
+        Senior::factory()->count(10)->create();
     }
 }

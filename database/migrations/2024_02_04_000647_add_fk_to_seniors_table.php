@@ -14,7 +14,7 @@ return new class extends Migration
         // Schema::dropIfExists('seniors');
         Schema::table('seniors', function (Blueprint $table) {
             //
-            $table->bigInteger('operator_id')->unsigned()->default(1)->after('id');
+            $table->bigInteger('operator_id')->unsigned()->after('id');
             $table->foreign('operator_id')->references('id')->on('operators')->onUpdate('cascade')->onDelete('cascade');
         });
     }

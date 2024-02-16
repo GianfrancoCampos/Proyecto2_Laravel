@@ -18,10 +18,11 @@ class Claim extends Model
         return $this->belongsTo(Senior::class);
     }
 
-    // Relacion Reclamo - Estado N-1
-    public function state() :BelongsTo{
-        return $this->belongsTo(State::class);
-    }
+// Relación Reclamo - Estado N-1
+public function state() :BelongsTo {
+    return $this->belongsTo(State::class, 'cod_estado');
+}
+
 
     public function comments() : HasMany{
         return $this->hasMany(Comment::class); //

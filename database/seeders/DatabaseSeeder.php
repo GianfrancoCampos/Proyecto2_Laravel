@@ -4,14 +4,14 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-
-
-use App\Models\Operator;
-use App\Models\Product;
-use Database\Factories\OperatorFactory;
-use Database\Factories\ProductFactory;
-
+use App\Models\Bill;
+use App\Models\Buy;
+use App\Models\Claim;
+use App\Models\Comment;
 use App\Models\Contact;
+use App\Models\itemBill;
+use App\Models\Operator;
+use App\Models\State;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 
@@ -31,12 +31,16 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call(OperatorSeeder::class);
-        $this->call(ContactSeeder::class);
+        $this->call(JuniorSeeder::class);
         $this->call(CallSeeder::class);
         $this->call(ProductSeeder::class);
-        $this->call(StateSeeder::class);
-        $this->call(JuniorSeeder::class);
+        $this->call(BuySeeder::class);
         $this->call(SeniorSeeder::class);
+        $this->call(StateSeeder::class);
+        $this->call(ClaimSeeder::class);
+        $this->call(BillSeeder::class);
+        $this->call(itemBillSeeder::class);
+        $this->call(CommentSeeder::class);
 
     }
 }

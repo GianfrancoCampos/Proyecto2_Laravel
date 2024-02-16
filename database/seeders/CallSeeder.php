@@ -3,11 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Call;
-use App\Models\Contact;
-use App\Models\Operator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use illuminate\Support\Facades\DB;
 
 class CallSeeder extends Seeder
 {

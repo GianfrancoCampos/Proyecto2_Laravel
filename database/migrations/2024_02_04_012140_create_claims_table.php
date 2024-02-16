@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('claims', function (Blueprint $table) {
-
             $table->id();
+            $table->integer('numero')->unique();
             $table->timestamps();
         });
     }

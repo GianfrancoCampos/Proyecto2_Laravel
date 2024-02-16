@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Operator;
-use App\Models\Senior;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,14 +17,13 @@ class SeniorFactory extends Factory
      */
     public function definition(): array
     {
-      $operadoresNoEnJuniors = Operator::whereNotIn('id', function ($query) {
-        $query->select('operator_id')->from('juniors');
-    })->pluck('id')->toArray();
-    // Esto devolvera los id que no estan asignados, es decir los distintos a los operator_id de juniors
-
-
-    return [
-        'operator_id' => fake()->unique()->randomElement($operadoresNoEnJuniors)
-    ];
+        $operadoresNoEnJuniors = Operator::whereNotIn('id', function ($query) {
+            $query->select('operator_id')->from('juniors');
+        })->pluck('id')->toArray();
+        // Esto devolvera los id que no estan asignados, es decir los distintos a los operator_id de juniors
+        
+        return [
+            'operator_id' => fake()->unique()->randomElement($operadoresNoEnJuniors)
+        ];
     }
 }

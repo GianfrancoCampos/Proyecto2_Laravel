@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Junior extends Model
 {
+
     use HasFactory;
     // Relacion ISA Operador Junior
     public function operator() :BelongsTo{

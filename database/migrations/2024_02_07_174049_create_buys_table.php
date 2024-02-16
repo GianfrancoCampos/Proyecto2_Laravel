@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('numero')->unique();
             $table->date('fecha');
-            $table->integer('medioPago');
+            $table->string('medioPago');
             $table->string('pers_autoriz');
             $table->timestamps();
         });

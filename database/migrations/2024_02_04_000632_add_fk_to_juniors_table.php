@@ -13,10 +13,11 @@ return new class extends Migration
     {
         // Schema::dropIfExists('juniors');
         Schema::table('juniors', function (Blueprint $table) {
-            //
             $table->bigInteger('operator_id')->unsigned()->after('id');
             $table->foreign('operator_id')->references('id')->on('operators')->onUpdate('cascade')->onDelete('cascade');
         });
+        
+        
     }
 
     /**
@@ -25,7 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('juniors', function (Blueprint $table) {
-            //
+            
             $table->dropForeign('operator_id');
             $table->dropColumn('operator_id');
         });
