@@ -8,7 +8,6 @@
     <title>Laravel</title>
 
     <!-- Vite -->
-    @vite('resources/css/app.css')
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -834,7 +833,6 @@
 </head>
 
 <body class="antialiased">
-    @vite('resources/js/app.js')
     <div id="app">
         Vue 3 + Vite + Laravel 10
         <hello-world></hello-world>
