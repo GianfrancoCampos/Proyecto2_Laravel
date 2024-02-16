@@ -19,7 +19,7 @@ class ContactController extends Controller
             session(['contador' => 0]);
         }
 
-        return view('contact.index', compact('books'));
+        return view('contact.index', compact('contacs'));
 
     }
 
@@ -57,7 +57,7 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Contact $id) 
+    public function show(string $id) 
     {
         $contact = Contact::findOrFail($id);
         if(!is_null(session('contador'))){
@@ -71,7 +71,7 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Contact $id)
+    public function edit(string $id)
     {
         $contact = Contact::find($id);
         return view('contact.edit', compact('contact'));
@@ -80,7 +80,7 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Contact $id)
+    public function update(Request $request, string $id)
     {
         $request->validate([
             'numero_documento' => 'required | digits:9 | numeric',
