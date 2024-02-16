@@ -18,9 +18,11 @@ class BillFactory extends Factory
     public function definition(): array
     {
 
-        $num_compra = Buy::inRandomOrder()->first()->id;
+        // $num_compra = Buy::inRandomOrder()->first()->id;
+        $num_compra = Buy::pluck('id')->toArray();
+
         return [
-            'numero_compra' => $num_compra,
+            'numero_compra' => fake()->unique()->randomElement($num_compra),
             'numero_factura' => fake()->unique()->randomNumber(4),
         ];
     }
