@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
+        $this->call(ContactSeeder::class);
         $this->call(OperatorSeeder::class);
         $this->call(JuniorSeeder::class);
         $this->call(CallSeeder::class);

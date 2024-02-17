@@ -17,8 +17,8 @@ return new class extends Migration
             $table->bigInteger('operador_id')->unsigned()->after('id');
             $table->foreign('operador_id')->references('id')->on('operators')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->bigInteger('cod_estado')->unsigned()->after('operador_id');
-            $table->foreign('cod_estado')->references('id')->on('states')->onUpdate('cascade')->onDelete('cascade');
+            $table->bigInteger('cod_estado_id')->unsigned()->after('operador_id');
+            $table->foreign('cod_estado_id')->references('id')->on('states')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -30,8 +30,8 @@ return new class extends Migration
         Schema::table('claims', function (Blueprint $table) {
             $table->dropForeign('operador_id');
             $table->dropColumn('operador_id');
-            $table->dropForeign('cod_estado');
-            $table->dropColumn('cod_estado');
+            $table->dropForeign('cod_estado_id');
+            $table->dropColumn('cod_estado_id');
         });
     }
 };

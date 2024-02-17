@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\State;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class StateSeeder extends Seeder
 {
@@ -13,25 +14,19 @@ class StateSeeder extends Seeder
      */
     public function run(): void
     {
-        State::created([
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        State::create([
             'codigo' => 'R1001',
             'descripcion' => 'Reclamo abierto'
         ]);
-        State::created([
+        State::create([
             'codigo' => 'R1002',
             'descripcion' => 'Proceso de resolucion'
         ]);
-        State::created([
+        State::create([
             'codigo' => 'R1003',
-            'descripcion' => 'Reclamo pendiente'
+            'descripcion' => 'Sin analizar'
         ]);
-        State::created([
-            'codigo' => 'R1004',
-            'descripcion' => 'Reclamo cerrado'
-        ]);
-        State::created([
-            'codigo' => 'R1005',
-            'descripcion' => 'Reclamo reabierto'
-        ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }
