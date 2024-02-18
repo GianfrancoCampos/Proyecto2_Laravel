@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Junior;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use PHPUnit\TextUI\XmlConfiguration\Logging\Junit;
 
 class JuniorController extends Controller
 {
@@ -35,9 +36,9 @@ class JuniorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Junior $junior)
+    public function show(string $id)
     {
-        //
+        $junior = Junior::find($id);
     }
 
     /**

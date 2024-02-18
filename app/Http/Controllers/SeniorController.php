@@ -35,9 +35,9 @@ class SeniorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Senior $senior)
+    public function show(string $id)
     {
-        //
+        $senior = Senior::find($id);
     }
 
     /**

@@ -35,9 +35,9 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Comment $comment)
+    public function show(string $id)
     {
-        //
+        $comentario = Comment::find($id);
     }
 
     /**

@@ -35,17 +35,18 @@ class CallController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Call $call)
+    public function show(string $id)
     {
-        //
+        $llamadas = Call::find($id);
+        return view('callcenter.call.show', compact('llamadas'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Call $call)
+    public function edit(string $id)
     {
-        //
+        $llamada = Call::find($id);
     }
 
     /**

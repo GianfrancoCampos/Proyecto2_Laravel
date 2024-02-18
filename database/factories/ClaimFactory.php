@@ -21,7 +21,7 @@ class ClaimFactory extends Factory
     public function definition(): array
     {
         $operatorIds = Senior::pluck('operator_id')->toArray();
-        $codigo = State::pluck('id')->toArray();
+        $cod_estado = State::pluck('id')->toArray();
         
         return [
             'operador_id' => fake()->randomElement($operatorIds),

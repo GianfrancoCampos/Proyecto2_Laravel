@@ -35,9 +35,9 @@ class ItemBillController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(itemBill $itemBill)
+    public function show(string $id)
     {
-        //
+        $item_factura = itemBill::find($id);
     }
 
     /**

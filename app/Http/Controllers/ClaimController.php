@@ -21,7 +21,7 @@ class ClaimController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,9 +35,9 @@ class ClaimController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Claim $claim)
+    public function show(string $id)
     {
-        //
+        $reclamo = Claim::find($id);
     }
 
     /**

@@ -35,9 +35,9 @@ class StateController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(State $state)
+    public function show(string $id)
     {
-        //
+        $estado = State::find($id);
     }
 
     /**

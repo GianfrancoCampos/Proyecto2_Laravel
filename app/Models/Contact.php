@@ -10,7 +10,7 @@ class Contact extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre','apellidos','calle','numero_domicilio', 'cod_postal'];
+    protected $fillable = ['numero_documento','tipo_documento','nombre','apellidos','calle','numero_domicilio','cod_postal'];
 
     // Relacion Contacto - Call
     public function calls() : HasMany {

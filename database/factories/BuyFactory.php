@@ -2,8 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Buy;
 use App\Models\Call;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Buy>
@@ -25,5 +27,7 @@ class BuyFactory extends Factory
             'medioPago' => fake()->randomElement(['Tarjeta', 'Transferencia']), 
             'pers_autoriz' => fake()->name()
         ];
+
+
     }
 }

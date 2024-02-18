@@ -35,9 +35,9 @@ class BuyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Buy $buy)
+    public function show(string $id)
     {
-        //
+        $compra = Buy::find($id);
     }
 
     /**

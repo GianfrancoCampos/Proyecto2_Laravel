@@ -35,9 +35,9 @@ class OperatorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Operator $operator)
+    public function show(string $id)
     {
-        //
+        $operador = Operator::find($id);
     }
 
     /**
