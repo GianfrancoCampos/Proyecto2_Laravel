@@ -17,10 +17,10 @@ class BuyFactory extends Factory
      */
     public function definition(): array
     {
-        $codigo_llamada = Call::inRandomOrder()->first()->id;
+        $codigo_llamada = Call::pluck('id')->toArray();
         return [
-            'cod_llamada' => $codigo_llamada,
-            'numero' => fake()->unique()->randomNumber(8),
+            'cod_llamada' => fake()->unique()->randomDigit(),
+            'numero' => fake()->phoneNumber(),
             'fecha' => fake()->dateTimeBetween('-1 year', 'now'),
             'medioPago' => fake()->randomElement(['Tarjeta', 'Transferencia']), 
             'pers_autoriz' => fake()->name()
