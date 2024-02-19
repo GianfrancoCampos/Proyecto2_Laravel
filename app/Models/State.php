@@ -10,7 +10,7 @@ class State extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['descripcion'];
+    protected $fillable = ['codigo','descripcion'];
 
     // Relacion Reclamo - Estado
     public function claims() :HasMany{

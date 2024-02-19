@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('operators', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero_documento');
+            $table->string('numero_documento');
             $table->string('tipo_documento');
             $table->string('nombre');
             $table->string('apellido');

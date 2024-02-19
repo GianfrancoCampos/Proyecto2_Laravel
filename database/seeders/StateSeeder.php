@@ -17,17 +17,16 @@ class StateSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         State::create([
             'codigo' => 'R1001',
-            'descripcion' => 'RESUELTO'
+            'descripcion' => 'Reclamo abierto'
         ]);
         State::create([
             'codigo' => 'R1002',
-            'descripcion' => 'EN EVOLUCIÓN'
+            'descripcion' => 'Proceso de resolucion'
         ]);
         State::create([
             'codigo' => 'R1003',
-            'descripcion' => 'SIN ANALIZAR'
+            'descripcion' => 'Sin analizar'
         ]);
-
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

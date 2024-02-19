@@ -19,7 +19,6 @@ class BuyFactory extends Factory
      */
     public function definition(): array
     {
-
         $codigo_llamada = Call::pluck('id')->toArray();
         return [
             'cod_llamada' => fake()->unique()->randomDigit(),

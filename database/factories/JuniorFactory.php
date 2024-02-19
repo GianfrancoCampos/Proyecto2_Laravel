@@ -24,6 +24,30 @@ class JuniorFactory extends Factory
 
     public function definition(): array
     {
+        /**
+         * ¡Nos costo mucho hacer esta clave foranea!
+         */
+        // $operador_id_existente = Operator::whereIn('id', function ($query) {
+        //     $query->select('operator_id')
+        //         ->from('juniors');
+        // })->pluck('id')->toArray();
+        // // $operadores_insertar = array();
+        // // for ($i = 1; $i <= $numero_operadores; $i++) {
+        // //     array_push($operadores_insertar, $i);
+        // // }
+        // // $operadores_usar = array_diff($operadores_insertar, $operador_id_existente);
+        // // $valor = end($operadores_usar);
+        // $valor = 1;
+        // $contador = Junior::where('operator_id', $valor)->count();
+        // while ($contador != 0) {
+        //     $valor = 2;
+        //     $contador = Junior::where('operator_id', $valor)->count();
+        // }
+        // $aleatoriosIngresados = array();
+        // $numeroAleatorio = rand(1, $numero_operadores); // Genera un número aleatorio entre 1 y $maximo
+        // $valor = $numeroAleatorio;
+        // while (in_array($valor, $operador_id_existente)) {
+        //     $valor =  rand(1, $numero_operadores);
 
         $numero_operadores =  Operator::all()->pluck('id')->count();
         $valor = fake()->unique()->numberBetween(1, $numero_operadores);
@@ -43,7 +67,6 @@ class JuniorFactory extends Factory
         // La anterior es una consulta con una subconsulta, no se me ocurrio de otra manera
         return [
             'operator_id' => $valor,
-
             'antiguedad' => $antiguedad
         ];
     }

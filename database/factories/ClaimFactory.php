@@ -25,7 +25,7 @@ class ClaimFactory extends Factory
         
         return [
             'operador_id' => fake()->randomElement($operatorIds),
-            'cod_estado' => fake()->randomElement($cod_estado),
+            'cod_estado_id' => fake()->randomElement($codigo),
             'numero' => fake()->unique()->numberBetween(1,100)
         ];
     }

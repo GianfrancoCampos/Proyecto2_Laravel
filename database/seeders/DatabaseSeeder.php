@@ -13,6 +13,7 @@ use App\Models\itemBill;
 use App\Models\Operator;
 use App\Models\State;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
 
         $this->call(ContactSeeder::class);
         $this->call(OperatorSeeder::class);

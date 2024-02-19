@@ -34,5 +34,16 @@ class BillSeeder extends Seeder
             }
             $factura->save();
         }
+
+        // $id_compra = Buy::select('id')->from('buys')->pluck('id')->toArray();
+        // $id_factura = Bill::select('id')->from('bills')->pluck('id')->toArray();
+        // for ($i = 0; $i < 10; $i++) {
+        //     $id_no_usados = array_diff($id_compra, $id_factura);
+        //     $valor = $id_no_usados[array_rand($id_no_usados)];
+        //     Bill::create([
+        //         'numero_compra' => $valor,
+        //         'numero_factura' => fake()->unique()->randomNumber(4)
+        //     ]);
+        // }
     }
 }
